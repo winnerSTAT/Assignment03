@@ -23,9 +23,9 @@ This assignment is **due at 23:59 of Sep 15, Thursday**. You can work on this fi
 
 Also, put the Section/Group and member info below.
 ```{r}
-# Section G?
-# Group ??
-# Members: YOUR NAMES HERE
+# Section G2
+# Group 05
+# Members: CHEN XIANG, XU YUWEN, YANG YUBO, ZHANG YUN
 ```
 
 ## Part I: Gender Discrimination in UC Berkeley Admissions
@@ -71,7 +71,7 @@ Answer:
 glm2 <- glm(cbind(Admitted, Rejected) ~ Gender + Dept, data = UCB, family = binomial())
 summary(glm2)
 
-# By controling Dept, we can see now gender is not so significant in the model, indicating that there is no gender bias statistically. The bias in previous model is maybe from the difference in Dept.
+# By controling Departmant, we can see now gender is not so significant in the model, indicating that there is no gender bias statistically. The bias in previous model is maybe from the difference in Dept, and for male and female, they may have different preference in choosing between those departments.
 ```
 
 
@@ -232,7 +232,7 @@ plot(knn100.err, col = "green", add = TRUE)
 plot(lr1.err, col = "orange", add = TRUE)
 plot(lr2.err, col = "purple", add = TRUE)
 # plot the benchmark
-abline(h = bayes.error, col = "gray")
+abline(h = bayes.error, col = "gray", lty = 2)
 ```
 
 
@@ -253,4 +253,11 @@ plot(knn100.ROC, col = "green", add = TRUE)
 plot(lr1.ROC, col = "orange", add = TRUE)
 plot(lr2.ROC, col = "purple", add = TRUE)
 abline(a=0, b=1, lty=2)
+
+# compare the 5 models by checking their exact value of AUC
+performance(knn1.pred, measure = "auc")@y.values
+performance(knn7.pred, measure = "auc")@y.values
+performance(knn100.pred, measure = "auc")@y.values
+performance(lr1.pred, measure = "auc")@y.values
+performance(lr2.pred, measure = "auc")@y.values
 ```
