@@ -59,6 +59,10 @@ Answer:
 ```{r}
 glm1 <- glm(cbind(Admitted, Rejected) ~ Gender, data = UCB, family = binomial())
 summary(glm1)
+female.prob <- predict(glm1, newdata = data.frame(Gender="Female"), type = "response")
+male.prob <- predict(glm1, newdata = data.frame(Gender="Male"), type = "response")
+female.prob
+male.prob
 # From the model perspective, gender is significant, and female has less chance to be admitted.
 ```
 
