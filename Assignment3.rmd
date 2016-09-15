@@ -268,4 +268,5 @@ performance(knn7.pred, measure = "auc")@y.values
 performance(knn100.pred, measure = "auc")@y.values
 performance(lr1.pred, measure = "auc")@y.values
 performance(lr2.pred, measure = "auc")@y.values
+#From the result we can see that the KNN model(K=7) is the best one.#
 ```
